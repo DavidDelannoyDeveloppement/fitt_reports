@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="description" content=""> -->
+  <title>Rapport - Client Machine</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/FiTT-symbole-seul-CMJN.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container_client_machine">
+        <div class="analyse_cpe_mois_page">
+            <div class="green_background"></div>
+            <hr class="top_hr_bleu">
+            <div class="support_titles_client_machines">
+                <h1>Résultat CPE mensuel</h1>
+                <h4>Machine : {nom_machine}</h4>
+            </div>
+            <hr class="bottom_hr_bleu">
+            <div class="support_table">
+                <div class="support_percent_left">
+                    <h3>{performance_contrat_percent} %</h3>
+                    <img src="{arrow_month}" alt="arrow_picture">
+                </div>
+                <h2>Performance du CPE {periode_client}</h2>
+                <table class="performance_cpe_table">
+                    <tr>
+                        <th>Consommation réelle</th>
+                        <th>Consommation prédite sans AEE</th>
+                        <th>{gain_perte}</th>
+                    </tr>
+                    <tr>
+                        <td>{consommation_reelle} MWh</td>
+                        <td>{modele_predictif} MWh</td>
+                        <td>{performance_contrat_kwh} kWh</td>
+                    </tr>
+                </table>
+            </div>
+            <h2>Superposition des consommations {periode_client}</h2>
+            <div class="support_graphics">
+                <img src="{superposition_predictif_reelle}" alt="Superposition-picture">
+            </div>
+        </div>
+    </main>
+</body>
+</html>

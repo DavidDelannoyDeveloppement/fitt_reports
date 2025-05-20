@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <meta name="description" content=""> -->
+  <title>Rapport {name_client} - Client Machine</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./../../../creations/{name_client}_reports/images/FiTT-symbole-seul-CMJN.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container_client_machine">
+
+        <!-- ###################################### -->
+        <!-- ####### PAGE ANALYSE CPE MOIS ########-->
+        <!-- ###################################### -->
+        <div class="client_machine_page">
+            <!-- <div class="green_background"></div> -->
+            <!-- <hr class="top_hr_bleu"> -->
+            <div class="support_titles_client_machines">
+                <h1>Résultat CPE Mensuel</h1>
+                <h4>{nom_machine}</h4>
+            </div>
+            <div class="support_items">
+                <div class="support_contract">
+                    <div class="support_percent">
+                        <p class="eco_surconso">{eco_surconso}</p>
+                        <h3>{performance_contrat_percent} %</h3>
+                        <!-- <img class="arrow_image" src="" alt="arrow_month_picture"> -->
+                    </div>
+                    <div class="support_engagement">
+                        <p>Engagement non contractuel de</p>
+                        <h3>{engagement_contract} %</h3>
+                    </div>
+                </div>
+                <h2 class="h2_performance">Performance du CPE<br>{periode_client}</h2>
+                <table class="performance_cpe_table">
+                    <tr>
+                        <th>Consommation réelle</th>
+                        <th>Consommation prédite sans AEE</th>
+                        <th>{gain_perte}</th>
+                    </tr>
+                    <tr>
+                        <td>{consommation_reelle} MWh</td>
+                        <td>{modele_predictif} MWh</td>
+                        <td>{performance_contrat_kwh} MWh</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="support_items">
+                <h2 class="h2_items">Superposition des consommations <br>{periode_client}</h2>
+                <img class="graphic_image" src="{superposition_predictif_reelle}" alt="superposition_predictif_reelle-picture">
+                <!-- <div class="support_graphics"> -->
+                <!-- </div> -->
+            </div>
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+        <!-- ###################################### -->
+        <!-- ####### PAGE ANALYSE CPE ANNEE #######-->
+        <!-- ###################################### -->
+        <div class="client_machine_page">
+            <div class="support_titles_client_machines">
+                <h1>Résultat CPE Annuel</h1>
+                <h4>{nom_machine}</h4>
+            </div>
+            <div class="support_items">
+                <div class="support_contract">
+                    <div class="support_percent">
+                        <p class="eco_surconso">{eco_surconso_year}</p>
+                        <h3>{performance_contrat_percent_year} %</h3>
+                        <!-- <img class="arrow_image" src="" alt="arrow_month_picture"> -->
+                    </div>
+                    <div class="support_engagement">
+                        <p>Engagement non contractuel de</p>
+                        <h3>{engagement_contract} %</h3>
+                    </div>
+                </div>
+                <h2 class="h2_performance">Performance du CPE <br>pour l'année {periode_client_year}</h2>
+                <table class="performance_cpe_table">
+                    <tr>
+                        <th>Consommation réelle</th>
+                        <th>Consommation prédite sans AEE</th>
+                        <th>{gain_perte_year}</th>
+                    </tr>
+                    <tr>
+                        <td>{consommation_reelle_year} MWh</td>
+                        <td>{modele_predictif_year} MWh</td>
+                        <td>{performance_contrat_kwh_year} MWh</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="support_items">
+                <h2 class="h2_items">Superposition des consommations<br>pour l'année {periode_client_year}</h2>
+                <img class="graphic_image" src="{superposition_predictif_reelle_year}" alt="superposition_predictif_reelle_year-picture">
+            </div>
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+        <!-- ###################################### -->
+        <!-- #### PAGE 1 ANALYSE OPERATIONNELLE ###-->
+        <!-- ###################################### -->
+        <div class="client_machine_page" id="analyse_operationnelle_client_machine_page_1">
+            <div class="support_titles_client_machines">
+                <h1>Analyse Opérationnelle</h1>
+                <h4>{nom_machine}<br>{periode_client}</h4>
+            </div>
+            <div class="support_items">
+                <h2 class="h2_items">Températures relevées - {periode_client}</h2>
+                <img class="graphic_image" src="{temperatures}" alt="temperatures-picture">
+            </div>
+            <!-- <div class="support_items">
+                <h2 class="h2_items">Mode de fonctionnement des 4 circuits</h2>
+                <img class="graphic_image" src="{mode_fonctionnement}" alt="mode_fonctionnement-picture">
+            </div> -->
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+        <!-- ###################################### -->
+        <!-- #### PAGE 2 ANALYSE OPERATIONNELLE ###-->
+        <!-- ###################################### -->
+        <div class="client_machine_page" id="analyse_operationnelle_client_machine_page_2">
+            <div class="support_items">
+                <h2 class="h2_items">Mode de fonctionnement des circuits</h2>
+                <img class="graphic_image" src="{mode_fonctionnement}" alt="mode_fonctionnement-picture">
+            </div>
+            <div class="support_items">
+                <h2 class="h2_items">Taux de compression, sous-refroidissement et surchauffe - {periode_client}</h2>
+                <h2 class="h2_items">Taux de compression des circuits</h2>
+                <img class="graphic_image" src="{taux_compression}" alt="taux_compression-picture">
+                <h2 class="h2_items">Surchauffe et sous-refroidissement, Circuit 1</h2>
+                <img class="graphic_image" src="{sante_circuit_1}" alt="sante_circuit_1-picture">
+                <h2 class="h2_items">Surchauffe et sous-refroidissement, Circuit 2</h2>
+                <img class="graphic_image" src="{sante_circuit_2}" alt="sante_circuit_2-picture">
+                <!-- <h2 class="h2_items">Circuit 3</h2>
+                <img class="graphic_image" src="{sante_circuit_3}" alt="sante_circuit_3-picture"> -->
+                <!-- <h2 class="h2_items">Circuit 4</h2>
+                <img class="graphic_image" src="{sante_circuit_4}" alt="sante_circuit_4-picture"> -->
+            </div>            
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+        <!-- ###################################### -->
+        <!-- #### PAGE 3 ANALYSE OPERATIONNELLE ###-->
+        <!-- ###################################### -->
+        <div class="client_machine_page" id="analyse_operationnelle_client_machine_page_3">
+            <div class="support_items">
+                <h2 class="h2_items">Mode de fonctionnement des circuits</h2>
+                <img class="graphic_image" src="{mode_fonctionnement}" alt="mode_fonctionnement-picture">
+
+            </div>
+            <div class="support_items">
+                <h2 class="h2_items">Puissances des compresseurs <br>{periode_client}</h2>
+                <img class="graphic_image" src="{intensite_compresseurs}" alt="intensite_compresseurs-picture">
+            </div>
+            
+            <div class="support_items">
+                <h2 class="h2_items">Démarrage et temps de fonctionnement <br>{periode_client}</h2>
+                <table class="demarrage_temps_circuit_table">
+                    <tr>
+                        <th>Circuit</th>
+                        <th>Temps de fonctionnement total</th>
+                        <th>Nombre de démarrage</th>
+                        <th>Temps de fonctionnement moyen</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>{Temps_de_fonctionnement_total_0} min</td>
+                        <td>{Nombre_de_démarrage_0}</td>
+                        <td>{Ratio_démarrages_par_heure_0} min <img src="{valid_ratio_0}" alt="valid-picture"></td>
+                    </tr> 
+                    <tr>
+                        <td>2</td>
+                        <td>{Temps_de_fonctionnement_total_1} min</td>
+                        <td>{Nombre_de_démarrage_1}</td>
+                        <td>{Ratio_démarrages_par_heure_1} min <img src="{valid_ratio_1}" alt="valid-picture"></td>
+                    </tr> 
+                    <tr>
+                        <td>3</td>
+                        <td>{Temps_de_fonctionnement_total_2} min</td>
+                        <td>{Nombre_de_démarrage_2}</td>
+                        <td>{Ratio_démarrages_par_heure_2} min <img src="{valid_ratio_2}" alt="valid-picture"></td>
+                    </tr> 
+                    <tr>
+                        <td>4</td>
+                        <td>{Temps_de_fonctionnement_total_3} min</td>
+                        <td>{Nombre_de_démarrage_3}</td>
+                        <td>{Ratio_démarrages_par_heure_3} min <img src="{valid_ratio_3}" alt="valid-picture"></td>
+                    </tr> 
+                </table>
+            </div>
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+        <!-- ###################################### -->
+        <!-- #### PAGE 4 ANALYSE OPERATIONNELLE ###-->
+        <!-- ###################################### -->
+        <div class="client_machine_page" id="analyse_operationnelle_client_machine_page_4">
+            <div class="support_items">
+                <h2 class="h2_items">Mode de fonctionnement des circuits</h2>
+                <img class="graphic_image" src="{mode_fonctionnement}" alt="mode_fonctionnement-picture">
+            </div>
+            
+            <div class="support_items">    
+                <h2 class="h2_items">Optimisation Énergetique - {periode_client}</h2>
+                <img class="graphic_image" src="{optimisation_energetique}" alt="optimisation_energetique-picture">
+            </div>
+        
+            <!-- <div class="support_items">
+                <h2 class="h2_items">COP des circuits - {periode_client}</h2>
+                <img class="graphic_image" src="{cop_4_circuits}" alt="cop_4_circuits-picture">
+            </div> -->
+    
+            <!-- <div class="support_items">
+                <h2 class="h2_items">EER des circuits - {periode_client}</h2>
+                <img class="graphic_image" src="{eer_4_circuits}" alt="eer_4_circuits-picture">
+            </div> -->
+
+            <div class="support_items">
+                <h2 class="h2_items">Rendement compresseur des circuits - {periode_client}</h2>
+                <img class="graphic_image" src="{rendement_compresseur}" alt="rendement_compresseur_circuits-picture">
+            </div>
+
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+
+
+
+        <!-- ###################################### -->
+        <!-- #### PAGE 5 ANALYSE OPERATIONNELLE ###-->
+        <!-- ###################################### -->
+        <div class="client_machine_page" id="analyse_operationnelle_client_machine_page_5">
+            <div class="support_items">
+                <h2 class="h2_items">Mode de fonctionnement des circuits</h2>
+                <img class="graphic_image" src="{mode_fonctionnement}" alt="mode_fonctionnement-picture">
+            </div>
+            <!-- <div class="support_items">
+                <h2 class="h2_items">COP, EER moyens - {periode_client}</h2>
+                <img class="graphic_image" src="{cop_eer_moyens}" alt="cop_eer_moyens-picture">
+            </div> -->
+            <div class="support_items">
+
+                <h2 class="h2_items">Puissances moyennes en fonctionnement du circuit <br>{periode_client}</h2>
+            
+            
+                <div class="support_table_puissance">
+                    <table class="puissances_moyennes_fonctionnement_table">
+                        <tr>
+                            <th></th>
+                            <th>Circuit 1</th>
+                            <th>Circuit 2</th>
+                            <th>Circuit 3</th>
+                            <th>Circuit 4</th>
+                        </tr>
+                        <tr>
+                            <td>Puissance<br>Froid</td>
+                            <td>{Puissance_froid_0} kW</td>
+                            <td>{Puissance_froid_1} kW</td>
+                            <td>{Puissance_froid_2} kW</td>
+                            <td>{Puissance_froid_3} kW</td>
+                        </tr>
+                        <tr>
+                            <td>Puissance<br>Chaud</td>
+                            <td>{Puissance_chaud_0} kW</td>
+                            <td>{Puissance_chaud_1} kW</td>
+                            <td>{Puissance_chaud_2} kW</td>
+                            <td>{Puissance_chaud_3} kW</td>
+                        </tr>
+                    </table>
+                    
+                    <table class="puissances_electrique_table">
+                        <tr>
+                            <th>Puissance Électrique Machine</th>
+                        </tr>
+                        <tr>
+                            <td>{puissance_electrique_machine} kW</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="support_h2_lien">
+                <h2 class="h2_lien">Accédez en temps réel à vos données<br></h2>
+                <a href="https://view.preprod.fitt-solutions.fr/d/be2fz0k9ij3swc/alvend-accueil?orgId=4" target="_blank">En cliquant ici !</a>
+            </div>
+            
+            <hr class="bottom_hr_bleu">
+            <p class="bas_page">{name_client} - {periode_client}</p>
+        </div>
+    </main>
+</body>
+</html>
