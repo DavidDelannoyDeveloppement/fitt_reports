@@ -27,7 +27,7 @@
                 <h2 class="pourcentage">{performance_contrat_percent} %</h2>
                 
                 <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso} pour un engagement <br>(non)contractuel de</p>
+                    <p class="eco_surconso">{eco_surconso} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color};">{engagement_contract} %</h2>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <h2 class="pourcentage">{performance_contrat_percent_year} %</h2>
                 
                 <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso_year} pour un engagement <br>(non)contractuel de</p>
+                    <p class="eco_surconso">{eco_surconso_year} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color_year};">{engagement_contract} %</h2>
                 </div>
             </div>    
@@ -96,12 +96,13 @@
             </div>
 
             <div class="support-graphique">
-                <h2>Superposition des consommations - {periode_client}</h2>
+                <h2>Superposition des consommations - de Mars 2024 à {periode_client}</h2>
                 <img class="graphic_image" src="{superposition_predictif_reelle_year}" alt="superposition_predictif_reelle-picture">
             </div>
 
             <hr class="bottom_hr_bleu">
             <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> {periode_client}</p>
+            <!-- <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> Mars 2024 - {periode_client}</p> -->
         </div>       
 
 
@@ -112,17 +113,18 @@
             <div class="titre">
                 <h1>Résultat CPE Mensuel<br>Électricité</h1>
             </div>
-
+            <div class="ajustement"></div>
             <div class="chiffres-cles">
                 <h3 class="chiffres">CHIFFRES</h3>
                 <h3 class="cles">CLÉS</h3>
                 <h2 class="pourcentage">{performance_contrat_percent_elec} %</h2>
                 
-                <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso_elec} pour un engagement <br>(non)contractuel de</p>
+                <!-- <div class="support_engagement">
+                    <p class="eco_surconso">{eco_surconso_elec} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color_elec};">{engagement_contract_elec} %</h2>
-                </div>
+                </div> -->
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-conso">
                 <div class="support-conso_colonne-gauche">
@@ -139,6 +141,7 @@
                     <p>{performance_contrat_kwh_elec} <span class="unite">MWh</span></p>
                 </div>
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-graphique">
                 <h2>Superposition des consommations - {periode_client}</h2>
@@ -157,17 +160,19 @@
             <div class="titre">
                 <h1>Résultat CPE Annuel<br>Électricité</h1>
             </div>
+            <div class="ajustement"></div>
 
             <div class="chiffres-cles">
                 <h3 class="chiffres">CHIFFRES</h3>
                 <h3 class="cles">CLÉS</h3>
                 <h2 class="pourcentage">{performance_contrat_percent_year_elec} %</h2>
                 
-                <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso_year_elec} pour un engagement <br>(non)contractuel de</p>
+                <!-- <div class="support_engagement">
+                    <p class="eco_surconso">{eco_surconso_year_elec} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color_year_elec};">{engagement_contract_elec} %</h2>
-                </div>
+                </div> -->
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-conso">
                 <div class="support-conso_colonne-gauche">
@@ -184,14 +189,16 @@
                     <p>{performance_contrat_kwh_year_elec} <span class="unite">MWh</span></p>
                 </div>
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-graphique">
-                <h2>Superposition des consommations - {periode_client}</h2>
+                <h2>Superposition des consommations - de Mars 2024 à {periode_client}</h2>
                 <img class="graphic_image" src="{superposition_predictif_reelle_year_elec}" alt="superposition_predictif_reelle-picture">
             </div>
 
             <hr class="bottom_hr_bleu">
             <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> {periode_client}</p>
+            <!-- <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> Mars 2024 - {periode_client}</p> -->
         </div>
 
 
@@ -202,17 +209,19 @@
             <div class="titre">
                 <h1>Résultat CPE Mensuel<br>Gaz</h1>
             </div>
+            <div class="ajustement"></div>
 
             <div class="chiffres-cles">
                 <h3 class="chiffres">CHIFFRES</h3>
                 <h3 class="cles">CLÉS</h3>
                 <h2 class="pourcentage">{performance_contrat_percent_gaz} %</h2>
                 
-                <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso_gaz} pour un engagement <br>(non)contractuel de</p>
+                <!-- <div class="support_engagement">
+                    <p class="eco_surconso">{eco_surconso_gaz} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color_gaz};">{engagement_contract_gaz} %</h2>
-                </div>
+                </div> -->
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-conso">
                 <div class="support-conso_colonne-gauche">
@@ -229,6 +238,7 @@
                     <p>{performance_contrat_kwh_gaz} <span class="unite">MWh</span></p>
                 </div>
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-graphique">
                 <h2>Superposition des consommations - {periode_client}</h2>
@@ -247,17 +257,19 @@
             <div class="titre">
                 <h1>Résultat CPE Annuel<br>Gaz</h1>
             </div>
+            <div class="ajustement"></div>
 
             <div class="chiffres-cles">
                 <h3 class="chiffres">CHIFFRES</h3>
                 <h3 class="cles">CLÉS</h3>
                 <h2 class="pourcentage">{performance_contrat_percent_year_gaz} %</h2>
                 
-                <div class="support_engagement">
-                    <p class="eco_surconso">{eco_surconso_year_gaz} pour un engagement <br>(non)contractuel de</p>
+                <!-- <div class="support_engagement">
+                    <p class="eco_surconso">{eco_surconso_year_gaz} pour un engagement <br>contractuel de</p>
                     <h2 class="pourcentage-contrat" style="color: {conforme_color_year_gaz};">{engagement_contract_gaz} %</h2>
-                </div>
+                </div> -->
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-conso">
                 <div class="support-conso_colonne-gauche">
@@ -274,14 +286,16 @@
                     <p>{performance_contrat_kwh_year_gaz} <span class="unite">MWh</span></p>
                 </div>
             </div>
+            <div class="ajustement"></div>
 
             <div class="support-graphique">
-                <h2>Superposition des consommations - {periode_client}</h2>
+                <h2>Superposition des consommations - de Mars 2024 à {periode_client}</h2>
                 <img class="graphic_image" src="{superposition_predictif_reelle_year_gaz}" alt="superposition_predictif_reelle-picture">
             </div>
 
             <hr class="bottom_hr_bleu">
             <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> {periode_client}</p>
+            <!-- <p class="bas_page">{name_client} <b>|</b> Rapport de Performance Énergétique <b>|</b> Mars 2024 - {periode_client}</p> -->
         </div>
 
 
