@@ -1493,8 +1493,109 @@ class ClientMachinePage(Page):
                 self._name_client, self._periode_client_m, "14-puissances_recup_chaleur"
             )
 
-        
 
+        ########################################################################
+        ##################          Quercy_Guilmot          ####################
+        ########################################################################
+        elif self._name_client == "Quercy_Cholet2":
+
+
+            ############   CPE MENSUEL / ANNUEL - ÉLEC / GAZ   #################
+            params["eco_surconso_elec"] = display_eco_surconso_elec(self._df)
+            params["eco_surconso_gaz"] = display_eco_surconso_gaz(self._df)
+            params["consommation_reelle_elec"] = display_conso_reelle_elec(self._df)
+            params["consommation_reelle_gaz"] = display_conso_reelle_gaz(self._df)
+            params["modele_predictif_elec"] = display_modele_predictif_elec(self._df)
+            params["modele_predictif_gaz"] = display_modele_predictif_gaz(self._df)
+            params["performance_contrat_kwh_elec"] = display_performance_contrat_kwh_elec(self._df)
+            params["performance_contrat_kwh_gaz"] = display_performance_contrat_kwh_gaz(self._df)
+            params["performance_contrat_percent_elec"] = display_performance_contrat_percent_elec(self._df)
+            params["performance_contrat_percent_gaz"] = display_performance_contrat_percent_gaz(self._df)
+            params["engagement_contract_elec"] = display_engagement_contract_elec(self._df)
+            params["engagement_contract_gaz"] = display_engagement_contract_gaz(self._df)
+            params["conforme_elec"] = display_conforme_elec(self._df)
+            params["conforme_color_elec"] = display_conforme_color_elec(self._df)
+            params["conforme_color_gaz"] = display_conforme_color_gaz(self._df)
+            params["conforme_gaz"] = display_conforme_gaz(self._df)
+            params["gain_perte_elec"] = display_gain_perte_elec(self._df)
+            params["gain_perte_gaz"] = display_gain_perte_gaz(self._df)
+
+            params["superposition_predictif_reelle_elec"] = import_graphic(self._name_client,self._periode_client_m,"1-superposition_predictif_reelle_elec",)
+            params["superposition_predictif_reelle_gaz"] = import_graphic(self._name_client,self._periode_client_m,"1-superposition_predictif_reelle_gaz",)
+            params["superposition_predictif_reelle_year_elec"] = import_graphic(self._name_client,self._periode_client_m,"2-superposition_predictif_reelle_year_elec",)
+            params["superposition_predictif_reelle_year_gaz"] = import_graphic(self._name_client,self._periode_client_m,"2-superposition_predictif_reelle_year_gaz",)
+
+            params["consommation_reelle_year_elec"] = display_conso_reelle_year_elec(self._df)
+            params["consommation_reelle_year_gaz"] = display_conso_reelle_year_gaz(self._df)
+            params["modele_predictif_year_elec"] = display_modele_predictif_year_elec(self._df)
+            params["modele_predictif_year_gaz"] = display_modele_predictif_year_gaz(self._df)
+            params["performance_contrat_kwh_year_elec"] = display_performance_contrat_kwh_year_elec(self._df)
+            params["performance_contrat_kwh_year_gaz"] = display_performance_contrat_kwh_year_gaz(self._df)
+            params["performance_contrat_percent_year_elec"] = display_performance_contrat_percent_year_elec(self._df)
+            params["performance_contrat_percent_year_gaz"] = display_performance_contrat_percent_year_gaz(self._df)
+            params["gain_perte_year_elec"] = display_gain_perte_year_elec(self._df)
+            params["gain_perte_year_gaz"] = display_gain_perte_year_gaz(self._df)
+            params["conforme_year_elec"] = display_conforme_year_elec(self._df)
+            params["conforme_year_gaz"] = display_conforme_year_gaz(self._df)
+            params["conforme_color_year_elec"] = display_conforme_color_year_elec(self._df)
+            params["conforme_color_year_gaz"] = display_conforme_color_year_gaz(self._df)
+            params["eco_surconso_year_elec"] = display_eco_surconso_year_elec(self._df)
+            params["eco_surconso_year_gaz"] = display_eco_surconso_year_gaz(self._df)
+
+
+            ##########   ANALYSE OPÉRATIONNELLE & PERFORMANCES   ###############
+            params["temperatures_process"] = import_graphic(
+                self._name_client, self._periode_client_m, "3-temperatures_process")
+            params["temperatures_opt"] = import_graphic(
+                self._name_client, self._periode_client_m, "4-temperatures_optimisation")
+            params["mode_fonctionnement"] = import_graphic(
+                self._name_client, self._periode_client_m, "5-mode_fonctionnement")
+            params["taux_de_compression"] = import_graphic(
+                self._name_client, self._periode_client_m, "6-taux_de_compression")
+            # params["sous_refroidissement"] = import_graphic(
+            #     self._name_client, self._periode_client_m, "7-sous_refroidissement"
+            # )
+            path_data_temps_fonctionnement = Path(
+                f"./../resources/{self._name_client}/client/{self._periode_client_m}/graphics/8-demarrage_temps_compresseur/demarrage_temps_compresseur.csv"
+            )
+            len_circuit = import_len_circuit(path_data_temps_fonctionnement)
+            for i in range(len_circuit):
+                index = i
+                params[
+                    f"Circuit_{i}"
+                ] = display_circuit(path_data_temps_fonctionnement, index)
+                params[
+                    f"Temps_de_fonctionnement_total_{i}"
+                ] = display_temps_fonctionnement(path_data_temps_fonctionnement, index)
+                params[f"Nombre_de_démarrage_{i}"] = display_nombre_demarrage(
+                    path_data_temps_fonctionnement, index
+                )
+                params[f"Ratio_démarrages_par_heure_{i}"] = display_ratio_demarrage(
+                    path_data_temps_fonctionnement, index
+                )
+                params[f"valid_ratio_min_{i}"] = valid_ratio_thelia(
+                    path_data_temps_fonctionnement, index, self._name_client
+                )
+            params["delta_temperatures"] = import_graphic(
+                self._name_client, self._periode_client_m, "9-delta_temperatures"
+            )
+            params["COP"] = import_graphic(
+                self._name_client, self._periode_client_m, "10-COP"
+            )
+            params["EER"] = import_graphic(
+                self._name_client, self._periode_client_m, "11-EER"
+            )
+            params["Rendement"] = import_graphic(
+                self._name_client, self._periode_client_m, "12-Rendement"
+            )
+            params["taux_recup_chaleur"] = import_graphic(
+                self._name_client, self._periode_client_m, "13-taux_recup_chaleur"
+            )
+            params["puissances_recup_chaleur"] = import_graphic(
+                self._name_client, self._periode_client_m, "14-puissances_recup_chaleur"
+            )
+
+        
         ########################################################################
         ##################      ITM_Montigny "Séparé"     ####################
         ########################################################################
